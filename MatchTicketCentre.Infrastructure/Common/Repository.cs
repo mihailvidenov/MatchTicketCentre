@@ -1,12 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+﻿using MatchTicketCentre.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using MatchTicketCentre.Infrastructure.Data;
 
 namespace MatchTicketCentre.Infrastructure.Common
 {
