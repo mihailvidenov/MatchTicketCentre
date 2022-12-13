@@ -26,8 +26,14 @@ namespace MatchTicketCentre.Infrastructure.Data.Models
         public int LeagueId { get; set; }
 
         [Required]
-        [ForeignKey(nameof(League))]
+        [ForeignKey(nameof(LeagueId))]
         public League League { get; set; } = null!;
+
+        [InverseProperty("HomeTeam")]
+        public List<Fixture> FixturesHomeTeam { get; set; } = new List<Fixture>();
+
+        [InverseProperty("AwayTeam")]
+        public List<Fixture> FixturesAwayTeam { get; set; } = new List<Fixture>();
 
 
     }

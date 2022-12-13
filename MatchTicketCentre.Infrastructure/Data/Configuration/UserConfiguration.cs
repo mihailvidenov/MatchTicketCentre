@@ -22,28 +22,30 @@ namespace MatchTicketCentre.Infrastructure.Data.Configuration
 
             User user = new User()
             {
-                Id = "a98e90bc-1adc-4f87-bb4e-9e12a2d39090",
+                Id = "f800fe70-4f4b-4890-b895-e5c8a3086bee",
                 Email = "mihailvidenov@abv.bg",
                 NormalizedEmail = "mihailvidenov@abv.bg".ToUpper(),
+                UserName = "mishaka002",
+                NormalizedUserName = "mishaka002".ToUpper(),
                 FirstName = "Mihail",
                 MiddleName = "Filipov",
                 LastName = "Videnov",
-                PhoneNumber = "0882482373",
-                EGN = "0251141414"
+                PhoneNumber = "0882482373"
             };
 
             users.Add(user);
 
             user = new User()
             {
-                Id = "65474606-d7e0-48a6-a6b3-3136c233dd4d",
+                Id = "7da4940e-881c-4622-85d1-5636853a21e5",
                 Email = "k_dimitrov@abv.bg",
                 NormalizedEmail = "k_dimitrov@abv.bg".ToUpper(),
+                UserName =  "kalata03",
+                NormalizedUserName = "kalata03".ToUpper(),
                 FirstName = "Kaloyan",
                 MiddleName = "Ivanov",
                 LastName = "Dimitrov",
-                PhoneNumber = "0883473405",
-                EGN = "9905221700"
+                PhoneNumber = "0883473405"
             };
 
             users.Add(user);

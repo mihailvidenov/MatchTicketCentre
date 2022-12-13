@@ -9,27 +9,27 @@ using System.Threading.Tasks;
 
 namespace MatchTicketCentre.Infrastructure.Data.Configuration
 {
-    public class CountryConfiguration : IEntityTypeConfiguration<Country>
+    public class TownConfiguration : IEntityTypeConfiguration<Town>
     {
-        public void Configure(EntityTypeBuilder<Country> builder)
+        public void Configure(EntityTypeBuilder<Town> builder)
         {
-            builder.HasData(CreateCountries());
+            builder.HasData(CreateTowns());
         }
 
-        private List<Country> CreateCountries()
+        private List<Town> CreateTowns()
         {
-            var countries = new List<Country>();
+            var towns = new List<Town>();
 
-            Country country = new Country()
+            Town town = new Town()
             {
                 Id = 1,
-                Name = "England"
+                Name = "Manchester",
+                CountryId = 1
             };
 
-            countries.Add(country);
+            towns.Add(town);
 
-            return countries;
-
+            return towns;
         }
     }
 }

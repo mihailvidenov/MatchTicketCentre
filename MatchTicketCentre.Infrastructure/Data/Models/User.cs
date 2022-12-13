@@ -17,15 +17,14 @@ namespace MatchTicketCentre.Infrastructure.Data.Models
         [StringLength(30)]
         public string LastName { get; set; } = null!;
 
-        [Required]
-        [StringLength(10)]
-        public string EGN { get; set; } = null!;
 
-        public List<Ticket> Tickets { get; set; } = null!;
+        public List<Ticket> Tickets { get; set; } = new List<Ticket>();
 
-        public List<UserRole> UsersRoles { get; set; } = null!;
+        public List<UserRole> UsersRoles { get; set; } = new List<UserRole>();
 
         public List<UserCard> UserCards { get; set; } = new List<UserCard>();
+
+        public List<Fixture> Fixtures { get; set; } = new List<Fixture>();
 
     }
 }

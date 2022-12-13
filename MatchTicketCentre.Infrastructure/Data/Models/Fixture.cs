@@ -39,7 +39,7 @@ namespace MatchTicketCentre.Infrastructure.Data.Models
         public Stadium Stadium { get; set; } = null!;
 
         [Required]
-        public int AdminId { get; set; }
+        public string AdminId { get; set; } = null!;
 
         [Required]
         [ForeignKey(nameof(AdminId))]

@@ -1,4 +1,5 @@
-﻿using MatchTicketCentre.Infrastructure.Data.Models;
+﻿using MatchTicketCentre.Infrastructure.Data.Configuration;
+using MatchTicketCentre.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -53,6 +54,29 @@ namespace MatchTicketCentre.Infrastructure.Data
             {  
                 sc.HasOne(uc => uc.User).WithMany(s => s.UserCards).OnDelete(DeleteBehavior.Restrict);
             });
+
+            builder.Entity<Team>(t =>
+            {
+                t.HasOne(tr => tr.Stadium).WithMany(tc => tc.Teams).OnDelete(DeleteBehavior.Restrict);
+            });
+
+            builder.Entity<Fixture>(f =>
+            {
+                f.HasOne(fi => fi.Admin).WithMany(fx => fx.Fixtures).OnDelete(DeleteBehavior.Restrict);
+                f.HasOne(fi => fi.Stadium).WithMany(fx => fx.Fixtures).OnDelete(DeleteBehavior.Restrict);
+                f.HasOne(fi => fi.HomeTeam).WithMany(fx => fx.FixturesHomeTeam).OnDelete(DeleteBehavior.Restrict);
+                f.HasOne(fi => fi.AwayTeam).WithMany(fx => fx.FixturesAwayTeam).OnDelete(DeleteBehavior.Restrict);
+            });
+
+            builder.ApplyConfiguration(new CountryConfiguration());
+            builder.ApplyConfiguration(new TownConfiguration());
+            builder.ApplyConfiguration(new LeagueConfiguration());
+            builder.ApplyConfiguration(new StadiumConfiguration());
+            builder.ApplyConfiguration(new TeamConfiguration());
+            builder.ApplyConfiguration(new UserConfiguration());
+            builder.ApplyConfiguration(new RoleConfiguration());
+            builder.ApplyConfiguration(new UserRoleConfiguration());
+
         }
 
 

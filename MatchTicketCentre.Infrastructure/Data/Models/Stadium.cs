@@ -14,6 +14,10 @@ namespace MatchTicketCentre.Infrastructure.Data.Models
         public string Name { get; set; } = null!;
 
         [Required]
+        [StringLength(150)]
+        public string Address { get; set; } = null!;
+
+        [Required]
         public int Capacity { get; set; }
 
         [Required]
@@ -26,9 +30,9 @@ namespace MatchTicketCentre.Infrastructure.Data.Models
         [ForeignKey(nameof(TownId))]
         public Town Town { get; set; } = null!;
 
-        public List<Fixture> Fixtures { get; set; } = new List<Fixture>();
-
         public List<Team> Teams { get; set; } = new List<Team>();
+
+        public List<Fixture> Fixtures { get; set; } = new List<Fixture>();
 
     }
 }
